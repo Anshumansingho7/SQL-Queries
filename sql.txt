@@ -1,0 +1,165 @@
+Write an SQL query to fetch “FIRST_NAME” from the Worker table using the alias name <WORKER_NAME>
+ans 1
+select Worker_name 
+    -> from worker;
+
+
+Write an SQL query to fetch “FIRST_NAME” from the Worker table in upper case.
+ans 2 
+select upper(Worker_name)
+    -> from worker;
+
+
+Write an SQL query to fetch unique values of DEPARTMENT from the Worker table.
+ans 3
+select distinct department
+    -> from worker;
+
+
+Write an SQL query to print the first three characters of FIRST_NAME from the Worker table.
+ans 4
+select Worker_name
+    -> from worker 
+    -> limit 3;
+
+
+Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from the Worker table.
+ans 5
+select Position("a" in Worker_name)
+    -> from worker
+    -> where Worker_name = "Dhanush";
+
+
+Write an SQL query to print the FIRST_NAME from the Worker table after removing white spaces from the right side.
+ans 6
+select RTRIM(Worker_name) as Worker_name
+    -> from worker 
+
+
+Write an SQL query to print the DEPARTMENT from the Worker table after removing white spaces from the left side.
+ans 7
+select LTRIM(department) as department from worker
+
+
+Write an SQL query that fetches the unique values of DEPARTMENT from the Worker table and prints its length.
+ans 8
+select LENGTH(department) as department 
+    -> from worker 
+    -> group by department;
+
+
+Write an SQL query to print the FIRST_NAME from the Worker table after replacing ‘a’ with ‘A’.
+ans 9
+select REPLACE(Worker_name, "a" , "A")
+    -> from worker;
+
+
+Write an SQL query to print the FIRST_NAME and LAST_NAME from the Worker table into a single column COMPLETE_NAME. A space char should separate them.
+ans 10
+select CONCAT(first_name, last_name) as name
+    -> from worker;
+
+
+Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending.
+ans 11
+select * from worker
+    -> order by first_name;
+
+
+Write an SQL query to print all Worker details from the Worker table order by FIRST_NAME Ascending and DEPARTMENT Descending.
+ans 12
+select * from worker 
+    -> ORDER BY first_name, department DESC;
+
+
+Write an SQL query to print details for Workers with the first names “Vipul” and “Satish” from the Worker table.
+ans 13
+select * from worker WHERE first_name = 'vipul' OR first_name = 'satish';
+
+
+Write an SQL query to print details of Workers with DEPARTMENT name as “Admin”.
+ans 14
+select * from worker WHERE department = 'Admin';
+
+
+Write an SQL query to print details of the Workers whose FIRST_NAME contains ‘a’.
+ans 15
+select * from worker WHERE first_name like 'a%';
+
+
+Write an SQL query to print details of the Workers whose FIRST_NAME ends with ‘h’ and contains six alphabets.
+ans 16
+select *
+   -> from worker
+   -> where first_name LIKE '%h' AND CHAR_LENGTH(first_name) = 6;
+
+
+Write an SQL query to print details of the Workers whose SALARY lies between 100000 and 500000.
+ans 17
+SELECT * FROM worker where Salary between 100000 and 500000;
+
+
+Write an SQL query to print details of the Workers who joined in Feb 2022.
+ans 18
+SELECT * FROM worker
+where joining_date = 'Feb 2022';
+
+
+Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000.
+ans 19
+SELECT * FROM worker 
+where Salary between 50000 and 100000;
+
+
+Write an SQL query to print details of the Workers who are also Managers.
+ans 20
+select * from worker 
+-> where post = "Manager";
+
+
+Write an SQL query to clone a new table from another table.
+ans 21
+create table employe2 as
+    -> select * from worker;
+
+
+Write an SQL query to show the current date and time.
+ans 22
+SELECT CURRENT_TIMESTAMP();
+
+
+Write an SQL query to show the top n (say 10) records of a table.
+ans 23
+select * from worker
+    -> limit 10;
+
+
+Write an SQL query to fetch the list of employees with the same salary.
+ans 24
+select count(Salary) AS Salarycount, Salary, GROUP_CONCAT(first_name, ',') as Emloyeeslist from worker  group by Salary;
+
+
+Write an SQL query to fetch the list of employees with the same salary.
+ans 25
+SELECT COUNT(department) AS departmentcount, department
+    -> FROM worker
+    -> GROUP BY department
+    -> HAVING departmentcount < 5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
